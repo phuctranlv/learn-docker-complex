@@ -18,3 +18,15 @@ after_success:
   - docker push phuctranlv/learn-docker-complex-nginx
   - docker push phuctranlv/learn-docker-complex-server
   - docker push phuctranlv/learn-docker-complex-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-west-1"
+  app: "learn-docker-complex"
+  env: "LearnDockerComplex-env"
+  bucket_name: "elasticbeanstalk-us-west-1-237841522464"
+  bucket_path: "learn-docker-complex"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
