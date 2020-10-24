@@ -13,7 +13,7 @@ after_success:
   - docker build -t phuctranlv/learn-docker-complex-nginx -f ./nginx/Dockerfile ./nginx
   - docker build -t phuctranlv/learn-docker-complex-server -f ./server/Dockerfile ./server
   - docker build -t phuctranlv/learn-docker-complex-worker -f ./worker/Dockerfile ./worker
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - echo "$DOCKER_pass" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push phuctranlv/learn-docker-complex-client
   - docker push phuctranlv/learn-docker-complex-nginx
   - docker push phuctranlv/learn-docker-complex-server
